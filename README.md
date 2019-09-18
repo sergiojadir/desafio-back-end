@@ -1,3 +1,6 @@
+# Quadro com tickets no Trello.
+Para acompanhar o andamento das atividades do desafio no trello, [clique aqui](https://trello.com/b/iNArvCMC/blupagamentos-desafio-dev)
+
 # Desafio programação - para vaga Back-end
 
 Por favor leiam este documento do começo ao fim, com muita atenção.
