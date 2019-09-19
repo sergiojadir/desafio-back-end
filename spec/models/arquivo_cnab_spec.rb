@@ -6,9 +6,7 @@ RSpec.describe ArquivoCnab, type: :model do
   end
 
   context 'validations' do
-  	it { is_expected.to validate_presence_of(:arquivo_filename) }
-  	it { is_expected.to validate_presence_of(:arquivo_size) }
-  	it { is_expected.to validate_presence_of(:arquivo_content_type) }
+  	
   end
 
   context 'table fields' do
@@ -16,6 +14,7 @@ RSpec.describe ArquivoCnab, type: :model do
   	it { is_expected.to have_db_column(:arquivo_filename).of_type(:string) }
   	it { is_expected.to have_db_column(:arquivo_size).of_type(:string) }
   	it { is_expected.to have_db_column(:arquivo_content_type).of_type(:string) }
+    it { is_expected.to have_db_column(:status).of_type(:string) }
   end
 
   context 'factories' do

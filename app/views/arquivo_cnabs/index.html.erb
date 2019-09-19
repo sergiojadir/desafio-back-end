@@ -9,6 +9,7 @@
         <th scope="col">Nome</th>
         <th scope="col">Tipo do arquivo</th>
         <th scope="col">Data de envio</th>
+        <th scope="col">Status</th>
         <th scope="col">Download</th>
         <th scope="col">#</th>
       </tr>
@@ -19,6 +20,7 @@
           <td><%= arquivo_cnab.arquivo_filename %></td>
           <td><%= arquivo_cnab.arquivo_content_type %></td>
           <td><%= l(arquivo_cnab.created_at) %></td>
+          <td><%= status_do_arquivo(arquivo_cnab) %></td>
           <td>
           	<%= link_to "Download", attachment_url(arquivo_cnab, :arquivo, force_download: true) %>
           </td>
