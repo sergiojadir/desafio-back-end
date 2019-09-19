@@ -68,4 +68,3 @@ gem 'refile-mini_magick', git: 'https://github.com/refile/refile-mini_magick.git
 # Máquina de estado
 gem 'state_machines'
 gem 'state_machines-activerecord'
-

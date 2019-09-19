@@ -1,0 +1,30 @@
+<h1 class="bd-title">Lista de transações da loja: <%= @nome_da_loja %></h1>
+
+<div class="row flex-xl-nowrap">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Tipo da transação</th>
+        <th scope="col">Data e hora</th>
+        <th scope="col">Valor</th>
+        <th scope="col">CPF</th>
+        <th scope="col">Cartão</th>
+        <th scope="col">Dono da loja</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @transacoes.each do |transacao| %>
+        <tr>
+          <td><%= transacao.tipo_da_transacao.descricao %></td>
+          <td><%= l(transacao.data_e_hora) %></td>
+          <td><%= saldo_decoration(transacao.valor) %></td>
+          <td><%= transacao.cpf %></td>
+          <td><%= transacao.cartao %></td>
+          <td><%= transacao.dono_da_loja %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to 'Voltar', :back %>

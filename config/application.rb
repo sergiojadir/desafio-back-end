@@ -11,6 +11,8 @@ module DesafioBackEnd
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
+    config.eager_load_paths += %W(#{Rails.root}/app/services/*)
+
     config.time_zone = 'Brasilia'
   end
 end

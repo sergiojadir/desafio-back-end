@@ -4,4 +4,12 @@ class TipoDaTransacao < ApplicationRecord
 
 	# Validations
 	validates :codigo, :descricao, :natureza, :sinal, presence: true
+
+	def entrada
+		sinal == "+"
+	end
+	
+	def saida?
+		sinal === "-"
+	end
 end

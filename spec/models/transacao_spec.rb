@@ -7,11 +7,10 @@ RSpec.describe Transacao, type: :model do
   end
 
   context 'validations' do
-  	it { is_expected.to validate_presence_of(:data) }
+  	it { is_expected.to validate_presence_of(:data_e_hora) }
   	it { is_expected.to validate_presence_of(:valor) }
   	it { is_expected.to validate_presence_of(:cpf) }
   	it { is_expected.to validate_presence_of(:cartao) }
-  	it { is_expected.to validate_presence_of(:hora) }
   	it { is_expected.to validate_presence_of(:dono_da_loja) }
   	it { is_expected.to validate_presence_of(:nome_da_loja) }
   end
@@ -19,11 +18,10 @@ RSpec.describe Transacao, type: :model do
   context 'table fields' do
   	it { is_expected.to have_db_column(:arquivo_cnab_id).of_type(:integer) }
   	it { is_expected.to have_db_column(:tipo_da_transacao_id).of_type(:integer) }
-  	it { is_expected.to have_db_column(:data).of_type(:date) }
+  	it { is_expected.to have_db_column(:data_e_hora).of_type(:datetime) }
   	it { is_expected.to have_db_column(:valor).of_type(:decimal) }
   	it { is_expected.to have_db_column(:cpf).of_type(:string) }
   	it { is_expected.to have_db_column(:cartao).of_type(:string) }
-  	it { is_expected.to have_db_column(:hora).of_type(:time) }
   	it { is_expected.to have_db_column(:dono_da_loja).of_type(:string) }
   	it { is_expected.to have_db_column(:nome_da_loja).of_type(:string) }
   end

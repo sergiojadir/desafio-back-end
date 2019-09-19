@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_19_034546) do
+ActiveRecord::Schema.define(version: 2019_09_18_225028) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,9 +20,9 @@ ActiveRecord::Schema.define(version: 2019_09_19_034546) do
     t.string "arquivo_filename"
     t.string "arquivo_size"
     t.string "arquivo_content_type"
+    t.string "state"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "status"
   end
 
   create_table "tipo_da_transacoes", force: :cascade do |t|
@@ -36,11 +36,10 @@ ActiveRecord::Schema.define(version: 2019_09_19_034546) do
   end
 
   create_table "transacoes", force: :cascade do |t|
-    t.date "data", null: false
+    t.datetime "data_e_hora", null: false
     t.decimal "valor", precision: 10, scale: 2, null: false
     t.string "cpf", limit: 11, null: false
     t.string "cartao", limit: 12, null: false
-    t.time "hora", null: false
     t.string "dono_da_loja", limit: 14, null: false
     t.string "nome_da_loja", limit: 19, null: false
     t.bigint "arquivo_cnab_id"

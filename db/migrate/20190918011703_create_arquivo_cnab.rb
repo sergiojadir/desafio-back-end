@@ -5,6 +5,7 @@ class CreateArquivoCnab < ActiveRecord::Migration[6.0]
       t.string :arquivo_filename
       t.string :arquivo_size
       t.string :arquivo_content_type
+      t.string :state
 
       t.timestamps
     end

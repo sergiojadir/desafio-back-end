@@ -24,7 +24,7 @@
           <td>
           	<%= link_to "Download", attachment_url(arquivo_cnab, :arquivo, force_download: true) %>
           </td>
-          <td><%= link_to 'Listar transações', arquivo_cnab_path(arquivo_cnab) if arquivo_cnab.transacoes.present? %></td>
+          <td><%= link_to 'Listar transações', arquivo_cnab_transacoes_path(arquivo_cnab) if arquivo_cnab.transacoes.present? %></td>
         </tr>
       <% end %>
     </tbody>

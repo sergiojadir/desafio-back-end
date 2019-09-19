@@ -18,6 +18,10 @@ class ArquivoCnabsController < ApplicationController
   	end
   end
 
+  def show
+  	@arquivo_cnab = ArquivoCnab.includes(:transacoes).find(params[:id])
+  end
+
 	private
 	def arquivo_cnab_params
 		params[:arquivo_cnab] = {arquivo: nil} if !params[:arquivo_cnab].present?

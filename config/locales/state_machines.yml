@@ -1,6 +1,8 @@
 en:
   activerecord:
     state_machines:
-      status:
-        em_processamento: 'Em processamento'
-        processado: 'Processado'
+      state:
+        states:
+          em_processamento: 'Em processamento'
+          processado: 'Processado'
+          processado_com_erro: 'Processado com erro'

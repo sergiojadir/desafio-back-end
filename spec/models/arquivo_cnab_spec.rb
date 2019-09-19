@@ -14,7 +14,7 @@ RSpec.describe ArquivoCnab, type: :model do
   	it { is_expected.to have_db_column(:arquivo_filename).of_type(:string) }
   	it { is_expected.to have_db_column(:arquivo_size).of_type(:string) }
   	it { is_expected.to have_db_column(:arquivo_content_type).of_type(:string) }
-    it { is_expected.to have_db_column(:status).of_type(:string) }
+    it { is_expected.to have_db_column(:state).of_type(:string) }
   end
 
   context 'factories' do

@@ -71,6 +71,7 @@ en:
       ultima_atualizacao: "%d/%m/%Y, %H:%M h"
       data_e_hora: '%d/%m/%Y %H:%M'
       ultima_atualizacao_hora_e_data: 'Última atualização %H:%M:%S %d/%m/%Y'
+      hora_minuto_segundo: "%H:%M h"
     am: ''
     pm: ''
 

@@ -1,0 +1,27 @@
+<h1 class="bd-title">Lista de transações do arquivo: <%= @arquivo_cnab.arquivo_filename %></h1>
+
+<div class="row flex-xl-nowrap">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Nome da loja</th>
+        <th scope="col">Saldo</th>
+        <th scope="col">Detalhes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @transacoes_agrupadas_por_loja.each do |transacao| %>
+        <tr>
+          <td><%= transacao.nome_da_loja %></td>
+          <td><%= saldo_decoration(transacao.saldo) %></td>
+          <td>
+            <%= 
+              link_to "Detalhes", 
+              detalhes_da_trasacao_arquivo_cnab_transacoes_path(@arquivo_cnab, nome_da_loja: transacao.nome_da_loja) 
+            %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
