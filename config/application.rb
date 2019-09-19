@@ -14,5 +14,7 @@ module DesafioBackEnd
     config.eager_load_paths += %W(#{Rails.root}/app/services/*)
 
     config.time_zone = 'Brasilia'
+
+    config.active_job.queue_adapter = :sidekiq
   end
 end
