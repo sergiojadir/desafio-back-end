@@ -6,5 +6,9 @@ class ArquivoCnab < ApplicationRecord
 	attachment :arquivo
 
 	# Validates
-	validates :arquivo_id, :arquivo_filename, :arquivo_size, :arquivo_content_type, presence: true
+	validate :arquivo_vazio
+
+	def arquivo_vazio
+		errors.add(:arquivo, :blank, message: "não pode ficar em branco") if arquivo.nil?
+	end
 end

@@ -5,4 +5,8 @@ FactoryBot.define do
     natureza { "Saída" }
     sinal { "-" }
   end
+
+  factory :tipo_da_transacao_invalida, class: TipoDaTransacao do
+    codigo { 2 }
+  end
 end

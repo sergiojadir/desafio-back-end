@@ -1,0 +1,30 @@
+<h1 class="bd-title">Lista de arquivos</h1>
+
+<%= link_to "Enviar arquivo cnab", new_arquivo_cnab_path, class: 'btn btn-primary' %>
+<br></br>
+<div class="row flex-xl-nowrap">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">Tipo do arquivo</th>
+        <th scope="col">Data de envio</th>
+        <th scope="col">Download</th>
+        <th scope="col">#</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @arquivos_cnabs.each do |arquivo_cnab| %>
+        <tr>
+          <td><%= arquivo_cnab.arquivo_filename %></td>
+          <td><%= arquivo_cnab.arquivo_content_type %></td>
+          <td><%= l(arquivo_cnab.created_at) %></td>
+          <td>
+          	<%= link_to "Download", attachment_url(arquivo_cnab, :arquivo, force_download: true) %>
+          </td>
+          <td><%= link_to 'Listar transações', arquivo_cnab_path(arquivo_cnab) if arquivo_cnab.transacoes.present? %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

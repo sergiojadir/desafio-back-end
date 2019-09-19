@@ -63,3 +63,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Upload de arquivo
 gem "refile", require: "refile/rails", git: 'https://github.com/refile/refile.git', branch: :master
+gem 'refile-mini_magick', git: 'https://github.com/refile/refile-mini_magick.git', branch: 'master'
+

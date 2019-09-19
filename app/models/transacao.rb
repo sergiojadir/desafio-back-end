@@ -5,6 +5,5 @@ class Transacao < ApplicationRecord
 
 	# Validations
 	validates :data, :valor, :cpf, :cartao, :hora, :dono_da_loja, :nome_da_loja, presence: true
-
 	validates :cpf, uniqueness: true
 end
