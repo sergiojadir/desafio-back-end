@@ -35,7 +35,7 @@ class ArquivoCnabParseService
 
 	def valor
 		valor_ = ( self.linha.at(9...19).strip.to_f / 100 ).round(2)
-		return "-#{valor_}".to_i if TipoDaTransacao.find(tipo_da_transacao)&.saida?
+		return "-#{valor_}".to_i if TipoDaTransacao.find_by(codigo: tipo_da_transacao)&.saida?
 		valor_
 	end
 
