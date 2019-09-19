@@ -15,6 +15,6 @@ module ApplicationHelper
 	end
 
 	def saldo_to_currency(saldo)
-		number_to_currency(saldo, unit: "R$", separator: ",", delimiter: "")
+		number_to_currency(saldo, unit: "R$", separator: ",", delimiter: ".")
 	end
 end

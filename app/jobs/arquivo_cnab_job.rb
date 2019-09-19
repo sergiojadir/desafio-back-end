@@ -3,7 +3,7 @@ class ArquivoCnabJob < ApplicationJob
 
   after_perform do |job|
     arquivo_cnab = ArquivoCnab.find(job.arguments.first)
-    arquivo_cnab.fire_events!(:terminar)
+    arquivo_cnab.fire_events!(:terminar) if !arquivo_cnab.processado_com_erro?
   end
 
   def perform(arquivo_cnab_id)
