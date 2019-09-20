@@ -27,6 +27,8 @@ class ArquivoCnabService
 			end
 		rescue
 			@arquivo_cnab.fire_events!(:error)
+
+			ActionCable.server.broadcast 'arquivo_cnab_notifications_channel', message: 'Arquivo processado com erro.!', alert: 'danger'
 		end
 	end
 

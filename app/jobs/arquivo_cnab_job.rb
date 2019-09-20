@@ -3,7 +3,11 @@ class ArquivoCnabJob < ApplicationJob
 
   after_perform do |job|
     arquivo_cnab = ArquivoCnab.find(job.arguments.first)
-    arquivo_cnab.fire_events!(:terminar) if !arquivo_cnab.processado_com_erro?
+    
+    if !arquivo_cnab.processado_com_erro?
+      arquivo_cnab.fire_events!(:terminar)
+      ActionCable.server.broadcast 'arquivo_cnab_notifications_channel', message: 'Arquivo processado com sucesso!', alert: 'success'
+    end
   end
 
   def perform(arquivo_cnab_id)

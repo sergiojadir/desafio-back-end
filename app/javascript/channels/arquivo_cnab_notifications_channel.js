@@ -2,7 +2,7 @@ import consumer from "./consumer"
 
 consumer.subscriptions.create("ArquivoCnabNotificationsChannel", {
   connected() {
-    // Called when the subscription is ready for use on the server
+    console.log("Connected to the room!");
   },
 
   disconnected() {
@@ -10,7 +10,6 @@ consumer.subscriptions.create("ArquivoCnabNotificationsChannel", {
   },
 
   received(data) {
-  	// .html("<div class='alert alert-success' role='alert'></div>")
-   	$('#messages').append(data['message'])
+   	$('#messages').html('<p class="alert alert-' + data.alert + '">' + data.message + '</div><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>')
   }
 });
