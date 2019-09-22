@@ -1,4 +1,5 @@
 class TransacoesController < ApplicationController
+  before_action :authenticate_user!
 	before_action :set_arquivo_cnab, only: [:index, :detalhes_da_trasacao]
 
   def index

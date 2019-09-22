@@ -1,4 +1,6 @@
 class ArquivoCnabsController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
   	@arquivos_cnabs = ArquivoCnab.all
   end

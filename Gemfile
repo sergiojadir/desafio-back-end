@@ -37,6 +37,8 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 4.0.0.beta2'
   gem 'faker'
+
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -72,3 +74,8 @@ gem 'state_machines-activerecord'
 # Sidekiq
 gem 'sidekiq'
 gem 'redis'
+
+gem 'devise'
+gem 'omniauth-google-oauth2'
+
+gem 'debug_unimedrj'
