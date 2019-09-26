@@ -5,7 +5,7 @@ class TipoDaTransacao < ApplicationRecord
 	# Validations
 	validates :codigo, :descricao, :natureza, :sinal, presence: true
 
-	def entrada
+	def entrada?
 		sinal == "+"
 	end
 	
