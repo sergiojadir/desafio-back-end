@@ -36,3 +36,5 @@ yarn-debug.log*
 
 #env
 .env
+
+dump.rdb

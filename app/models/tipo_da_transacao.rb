@@ -1,15 +1,15 @@
 class TipoDaTransacao < ApplicationRecord
-	# Associations
-	has_many :transacoes
+  # Associations
+  has_many :transacoes
 
-	# Validations
-	validates :codigo, :descricao, :natureza, :sinal, presence: true
+  # Validations
+  validates :codigo, :descricao, :natureza, :sinal, presence: true
 
-	def entrada?
-		sinal == "+"
-	end
-	
-	def saida?
-		sinal === "-"
-	end
+  def entrada?
+    sinal == "+"
+  end
+  
+  def saida?
+    sinal === "-"
+  end
 end
